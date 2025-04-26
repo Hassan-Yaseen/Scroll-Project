@@ -1,0 +1,261 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+.links{
+    list-style: none;
+    display: flex;
+    gap: 5rem;
+}
+.scroll-link{
+    text-decoration: none;
+    color: white;
+}
+.links a{
+    font-size: 1.5rem;
+}
+.black{
+    color: black;
+}
+.links2 li{
+    background-color: white;
+    padding: 10px; 
+}
+.links2 a{
+    color: rgb(101, 101, 101);
+}
+.nav{
+    position: relative;
+}
+.fixed-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+}
+.links-container2{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+}
+.show1{
+    max-height: 9.6rem;
+    opacity: 1;
+}
+.nav-centre{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 8rem 0 5rem;
+    height: 4rem;
+}
+
+.logo{
+    height: 4rem;
+    width: 4rem;
+}
+.banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 5rem);
+    row-gap: 1rem;
+}
+.hero-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+    object-fit: cover;
+}
+.banner::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: rgba(0,60,60,0.7);
+}
+.white-btn{
+    background-color: transparent;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid white;
+}
+.banner-title,.banner-content{
+    color: white;   
+}
+.banner-content{
+    width: 40vw;
+    text-align: center;
+}
+.section{
+    height: 100vh;
+}
+.section .title{
+    text-align: center;
+    padding-top: 0.2rem;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    background-color: darkslategrey;
+    color: white;
+}
+.top-link{
+    background-color: lightgreen;
+    padding: 5px;
+    border-radius: 5px;
+    position: fixed;
+    right: 20px;
+    bottom: 15px;
+    animation: bounce 2s ease-in-out infinite;
+    visibility: hidden;
+}
+.show2{
+    visibility:visible;
+}
+@keyframes bounce {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+.links-icon{
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+@media(max-width:1100px) {
+    .nav-centre{
+        padding: 1rem 5rem 0 5rem;
+    }   
+}
+@media(max-width:900px) {
+    .links{
+        gap:3rem;
+    }
+}
+@media(max-width:800px) {
+    .nav-centre{
+        padding: 1rem 3rem 0 3rem;
+    }   
+}
+@media(max-width:700px) {
+    .nav-centre{
+        padding-top: 0.5rem;
+    }
+    .links-container{
+        display: none;
+    }
+    .links-icon{
+       display: inline; 
+    }
+    .hero-image{
+        top: 5rem;
+        height: calc(100vh - 5rem);
+    }
+    .banner::after{
+        top: 5rem;
+        height: calc(100vh - 5rem);
+    }
+}
+@media(max-width:500px) {
+    .nav-centre{
+        padding: 0.5rem 2rem 0 2rem;
+    } 
+    .links-icon{
+        right: 2rem;
+    }
+    .banner-title{
+        font-size: 28px;
+    }
+    .banner-content{
+        font-size: 14px;
+    }
+    .white-btn{
+        font-size: 12px;
+    }
+}
+@media(max-width:400px) {
+    .nav-centre{
+        padding: 0.5rem 1rem 0 1rem;
+    } 
+    .links-icon{
+        right: 1rem;
+        top: 1.5rem;
+    }
+    .banner-title{
+        font-size: 25px;
+    }
+    .white-btn{
+        font-size: 10px;
+    }
+    .footer p{
+        font-size: 14px;
+    }
+    .hero-image{
+        top: 4.5rem;
+        height: calc(100vh - 4.5rem);
+    }
+    .banner::after{
+        top: 4.5rem;
+        height: calc(100vh - 4.5rem);
+    }
+}
+@media(max-width:550px){
+    .footer p{
+        width: 60vw;
+        text-align: center;
+    }
+}
+@media(max-width:360px){
+    .links-icon{
+        font-size:  1.5rem;
+    }
+    .logo{
+        height: 3rem;
+        width: 3rem;
+    }
+}
+@media(max-width:350px){
+    .banner-title{
+        font-size: 23px;
+    }
+    .section .title{
+        font-size: 14px;
+    }
+    .banner-content{
+        font-size: 12px;
+    }
+    .white-btn{
+        font-size: 08px;
+    }
+    .footer p{
+        font-size: 12px;
+    }
+}
+
